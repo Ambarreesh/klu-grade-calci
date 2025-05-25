@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLU Grade Calci</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+        nav{
+            background-color:rgb(174, 174, 255);
+            color: black;
+            font-family:Arial, Helvetica, sans-serif ;
+            
+            padding: 7px;
+        }
+        ul,li,h2{
+            display: inline;
+        }
+        ul{
+            margin-left: 70%;
+        }
+        .about{
+            background-color: rgb(161, 206, 228);
+            color: rgb(0, 0, 0);
+            padding: 7px;
+            margin-top: 280px;
+        
+        }
+        li:hover{
+            color: rgb(175, 203, 251);
+        }
+        li{
+            cursor: pointer;
+            gap: 20px;
+            
+        }
+        .bt{
+            width: 130px;
+            height: 60px;
+            background-color: green;
+            border-radius: 20px;
+            color: white;
+            border: 1px;
+            font-size: 18px;
+        }
+        input{
+            height: 30px;
+            border-radius: 15px;
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body style="background-color: #fffdff;">
+    <nav>
+        <h2>KLU Grade Calci</h2>
+        <ul>
+            <li><a href="index.html" style="text-decoration: none; color: black;">Home</a> | </li>
+            <li class="hide-on-mobile"><a href="grade.html" style="text-decoration: none; color: black;"> Grade</a> | </li>
+            <li class="hide-on-mobile"><a href="sgpa1.html" style="color: black; text-decoration: none;"> SGPA</a> | </li>
+            <li class="hide-on-mobile"><a style="color: yellow;"> CGPA</a></li>
+        </ul>
+    </nav>
+    <center>
+    <h2  style="font-family: 'Times New Roman', Times, serif; font-style: normal; size: 30px;">CGPA CALCULATION</h2>
+    <p style="font-family: Arial, Helvetica, sans-serif; font-style: normal; size: 20px;"><br>
+        Note : All Calculation Results are Approximation. <br>
+               Enter End sem mark if available, if not enter approimate mark
+               If your are in 1st Sem then your SGPA will be Your CGPA
+    </p> 
+    </center>
+    <hr>
+    <br><br>
+    <center>
+        <h3>Enter the Details</h3>
+        <table>
+            <tr>
+                <td><h3>Enter Previous CGPA : </h3></td>
+                <td><input id="pc" type="number" placeholder="Enter prev CGPA"></td>
+            </tr>
+            <tr>
+                <td><h3>Enter Previous Credit : </h3></td>
+                <td><input id="pcr" type="number" placeholder="Enter prev tot credits"></td>
+            </tr>
+            <tr>
+                <td><h3>Enter Current SGPA : </h3></td>
+                <td><input id="cs" type="number" placeholder="Enter current SGPA"></td>
+            </tr>
+            <tr>
+                <td><h3>Enter Current Credit : </h3></td>
+                <td><input id="csr" type="number" placeholder="Enter current credits"></td>
+            </tr>
+            <tr>
+                <td><h1 id="cgpa"></h1></td>
+            </tr>
+        </table>
+        <button onclick="cgpa()" type="submit" style="height: 50px; width: 100px;">Calculate</button>
+    </center>
+
+        
+    <div class="about">
+        <center>
+        <h3>© 2025 KLU Grade Calci (Developed by Ambarreesh)</h3>
+        </center>
+    </div> 
+    <script src="cgpa.js"></script>
+</body>
+</html>

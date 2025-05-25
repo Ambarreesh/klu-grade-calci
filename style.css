@@ -1,0 +1,68 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs and buttons */
+input, select, button {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Results or output */
+#result, #sgpaResult, #cgpaResult {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  input, select, button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLU Grade Calci</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+        nav{
+            background-color:rgb(174, 174, 255);
+            color: black;
+            font-family:Arial, Helvetica, sans-serif ;
+            
+            padding: 7px;
+        }
+        ul,li,h2{
+            display: inline;
+        }
+        ul{
+            margin-left: 70%;
+        }
+        .about{
+            background-color: rgb(161, 206, 228);
+            color: rgb(0, 0, 0);
+            padding: 7px;
+            margin-top: 280px;
+        
+        }
+        li:hover{
+            color: rgb(175, 203, 251);
+        }
+        li{
+            cursor: pointer;
+            gap: 20px;
+            
+        }
+        .bt{
+            width: 130px;
+            height: 60px;
+            background-color: green;
+            border-radius: 20px;
+            color: white;
+            border: 1px;
+            font-size: 18px;
+        }
+        input{
+            height: 30px;
+            border-radius: 15px;
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body style="background-color: #fffdff;">
+    <nav>
+        <h2>KLU Grade Calci</h2>
+        <ul>
+            <li><a href="index.html" style="text-decoration: none; color: black;">Home</a> | </li>
+            <li class="hide-on-mobile"><a href="grade.html" style="text-decoration: none; color: black;"> Grade</a> | </li>
+            <li class="hide-on-mobile"><a style="color: yellow;"> SGPA</a> | </li>
+            <li class="hide-on-mobile"> <a href="cgpa1.html" style="text-decoration: none; color: black;">CGPA</a></li>
+        </ul>
+    </nav>
+    <center>
+    <h2  style="font-family: 'Times New Roman', Times, serif; font-style: normal; size: 30px;">SGPA CALCULATION</h2>
+    <p style="font-family: Arial, Helvetica, sans-serif; font-style: normal; size: 20px;"><br>
+        Note : All Calculation Results are Approximation. <br>
+               Enter End sem mark if available, if not enter approimate mark
+    </p> 
+    </center>
+    <hr>
+    <br><br>
+    <center>
+        <h3>Enter the Details</h3>
+        <table>
+            <tr>
+                <td><h3>Enter No.of.Semester : </h3></td>
+                <td><input type="number" placeholder="Enter sem"></td>
+            </tr>
+            <tr>
+                <td><h3>Enter No.of.Course : </h3></td>
+                <td><input id="noc" type="number" placeholder="Enter no of subject"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><a><button onclick="save()" type="submit"  style="background-color: green; ">Submit</button></a></td>
+            </tr>
+        </table>
+    </center>
+
+        
+    <div class="about">
+        <center>
+        <h3>© 2025 KLU Grade Calci (Developed by Ambarreesh)</h3>
+        </center>
+    </div> 
+    <script src="grade.js"></script>
+</body>
+</html>

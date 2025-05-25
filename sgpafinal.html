@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLU Grade Calci</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+        nav{
+            background-color:rgb(174, 174, 255);
+            color: black;
+            font-family:Arial, Helvetica, sans-serif ;
+            
+            padding: 7px;
+        }
+        ul,li,h2{
+            display: inline;
+        }
+        ul{
+            margin-left: 70%;
+        }
+        .about{
+            background-color: rgb(161, 206, 228);
+            color: rgb(0, 0, 0);
+            padding: 7px;
+            margin-top: 280px;
+        
+        }
+        li:hover{
+            color: rgb(175, 203, 251);
+        }
+        li{
+            cursor: pointer;
+            gap: 20px;
+            
+        }
+        .bt{
+            width: 130px;
+            height: 60px;
+            background-color: green;
+            border-radius: 20px;
+            color: white;
+            border: 1px;
+            font-size: 18px;
+        }
+        input{
+            height: 30px;
+            border-radius: 15px;
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body style="background-color: #fffdff;">
+    <nav>
+        <h2>KLU Grade Calci</h2>
+        <ul>
+            <li><a href="index.html" style="text-decoration: none; color: black;">Home</a> | </li>
+            <li class="hide-on-mobile"><a href="grade.html" style="text-decoration: none; color: black;"> Grade</a> | </li>
+            <li class="hide-on-mobile"><a style="color: yellow;"> SGPA</a> | </li>
+            <li class="hide-on-mobile"><a href="cgpa1.html" style="text-decoration: none;color: black;"> CGPA</a></li>
+        </ul>
+    </nav>
+    <center>
+    <h2  style="font-family: 'Times New Roman', Times, serif; font-style: normal; size: 30px;">SGPA CALCULATION</h2>
+    <p style="font-family: Arial, Helvetica, sans-serif; font-style: normal; size: 20px;"><br>
+        Note : All Calculation Results are Approximation. <br>
+               Enter End sem mark if available, if not enter approimate mark
+    </p> 
+    </center>
+    <hr>
+    <br><br>
+    <center>
+        <h2>SGPA RESULT</h2>
+        <table border="1">
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Credits</th>
+        <th>Grade</th>
+        <th>Grade Points</th>
+        <th>Weighted Points</th>
+      </tr>
+    </thead>
+    <tbody id="resultBody"></tbody>
+  </table>
+  <h3 id="sgpa"></h3>
+    
+    <div class="about">
+        <center>
+        <h3>© 2025 KLU Grade Calci (Developed by Ambarreesh)</h3>
+        </center>
+    </div> 
+    <script>
+        const gradePoints = {
+      "S": 10,
+      "A": 9,
+      "B": 8,
+      "C": 7,
+      "D": 6,
+      "E": 5,
+      "F": 0
+    };
+
+    const courses = JSON.parse(localStorage.getItem("courses"));
+    const credits = JSON.parse(localStorage.getItem("credits"));
+    const grades = JSON.parse(localStorage.getItem("grades"));
+
+    const tbody = document.getElementById("resultBody");
+    let totalCredits = 0, totalPoints = 0;
+
+    for (let i = 0; i < courses.length; i++) {
+      const gp = gradePoints[grades[i]] ?? 0;
+      const wp = credits[i] * gp;
+      totalCredits += credits[i];
+      totalPoints += wp;
+
+      const row = `
+        <tr>
+          <td>${courses[i]}</td>
+          <td>${credits[i]}</td>
+          <td>${grades[i]}</td>
+          <td>${gp}</td>
+          <td>${wp}</td>
+        </tr>
+      `;
+      tbody.innerHTML += row;
+    }
+
+    const sgpa = (totalPoints / totalCredits).toFixed(2);
+    document.getElementById("sgpa").innerText = `Final SGPA: ${sgpa}`;
+    </script>
+</body>
+</html>
